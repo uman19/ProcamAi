@@ -1,0 +1,10 @@
+{
+  "name": "Pro Shot Camera",
+  "description": "A high-performance professional reference camera featuring manual exposure, focus peaking, custom LUT filters, direct OTG storage, and real-time composition recommendations.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

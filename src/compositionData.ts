@@ -1,0 +1,357 @@
+export type CompositionCategory =
+  | "Geometry & Spatial Grids"
+  | "Using Lines & Motion"
+  | "Shapes & Structures"
+  | "Depth & Scale"
+  | "Framing Constraints & Angles"
+  | "Textures, Color & Concepts";
+
+export type CompositionNature = "Static (Frame-Relative)" | "Dynamic (View-Relative)";
+
+export interface CompositionTechnique {
+  id: string;
+  name: string;
+  category: CompositionCategory;
+  nature: CompositionNature;
+  description: string;
+  professionalTip: string;
+  defaultScore: number;
+}
+
+export const COMPOSITION_TECHNIQUES: CompositionTechnique[] = [
+  // --- Category: Geometry & Spatial Grids ---
+  {
+    id: "thirds",
+    name: "Rule of Thirds",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Align key elements along horizontal and vertical third-lines to establish natural visual weight.",
+    professionalTip: "Place the subject's eyes or horizons precisely on one of the four intersection points.",
+    defaultScore: 95,
+  },
+  {
+    id: "phi_grid",
+    name: "Golden Ratio (Phi Grid)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "A mathematical grid built on 1:1.618 ratio, focusing subjects tighter to center for organic balance.",
+    professionalTip: "Excellent for environmental portraits and grand landscapes where centered balance is preferred.",
+    defaultScore: 92,
+  },
+  {
+    id: "golden_spiral_tl",
+    name: "Golden Spiral (Top-Left)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Fibonacci spiral sweeping from top-left, drawing the eyes inward to a golden ratio vortex focus.",
+    professionalTip: "Align a key subject highlight or eye on the spiral focus node located in the left-center quadrant.",
+    defaultScore: 88,
+  },
+  {
+    id: "golden_spiral_tr",
+    name: "Golden Spiral (Top-Right)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Fibonacci spiral sweeping from top-right down to a vortex focus on the right-center quadrant.",
+    professionalTip: "Perfect when negative space is concentrated on the left, pushing the eye into the right subject.",
+    defaultScore: 88,
+  },
+  {
+    id: "golden_spiral_bl",
+    name: "Golden Spiral (Bottom-Left)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Fibonacci spiral sweeping from bottom-left up and around to a focal vertex near the bottom-center.",
+    professionalTip: "Use this to anchor strong foreground elements that lead to midground details.",
+    defaultScore: 86,
+  },
+  {
+    id: "golden_spiral_br",
+    name: "Golden Spiral (Bottom-Right)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Fibonacci spiral sweeping from bottom-right up to a vortex focal point in the lower-right.",
+    professionalTip: "Great for portraits where the subject is leaning into the frame from the right.",
+    defaultScore: 87,
+  },
+  {
+    id: "golden_triangles",
+    name: "Golden Triangles",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Divides the frame diagonally with perpendicular lines, perfect for balancing dynamic action.",
+    professionalTip: "Place slopes, limbs, or moving subjects parallel to the diagonal divider lines.",
+    defaultScore: 84,
+  },
+  {
+    id: "quadrants",
+    name: "Quadrant Composition (Rule of Fourths)",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Breaks the frame into a detailed 4x4 grid, offering highly precise grid alignments.",
+    professionalTip: "Use for wildlife, detailed architecture, or clinical macro work where micro-spacing counts.",
+    defaultScore: 81,
+  },
+  {
+    id: "centered_split",
+    name: "Centered / Split Composition",
+    category: "Geometry & Spatial Grids",
+    nature: "Static (Frame-Relative)",
+    description: "Splits the frame exactly in half to emphasize balance, stillness, and grand scale.",
+    professionalTip: "Align horizons precisely on the center line when reflecting skies on still water.",
+    defaultScore: 90,
+  },
+
+  // --- Category: Using Lines & Motion ---
+  {
+    id: "leading_lines",
+    name: "Leading Lines",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Leverages roads, paths, walls, or fences to guide the viewer’s eye deep into the photograph.",
+    professionalTip: "Line up linear details so they point directly toward the main subject of interest.",
+    defaultScore: 94,
+  },
+  {
+    id: "s_curves",
+    name: "S-Curves",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Sweeping, winding 'S' paths (rivers, trails) that create a relaxed, flowing visual journey.",
+    professionalTip: "Let the curve wander from foreground to background to add a rhythmic sense of depth.",
+    defaultScore: 89,
+  },
+  {
+    id: "c_curves",
+    name: "C-Curves",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Gentle semi-circular lines that cradle the subject and give an organic sense of containment.",
+    professionalTip: "Anchor the circular sweep along the outer thirds, curving around your main subject.",
+    defaultScore: 80,
+  },
+  {
+    id: "diagonals",
+    name: "Diagonal Lines",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Placing key visual boundaries at sharp angles to inject energy, speed, and tension.",
+    professionalTip: "Tilt your framing slightly or align dynamic stairs or paths at 30-45 degree angles.",
+    defaultScore: 83,
+  },
+  {
+    id: "parallels",
+    name: "Parallel Lines",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Multiple repeating lines running in parallel to emphasize structure, rhythm, and grand scale.",
+    professionalTip: "Great for columns, repeating architectural windows, and industrial crop layouts.",
+    defaultScore: 78,
+  },
+  {
+    id: "converging",
+    name: "Converging Lines",
+    category: "Using Lines & Motion",
+    nature: "Dynamic (View-Relative)",
+    description: "Lines starting wide at edges and converging to a single point in the far distance.",
+    professionalTip: "Perfect for train tracks, bridges, and looking straight down tall skyscraper avenues.",
+    defaultScore: 91,
+  },
+
+  // --- Category: Shapes & Structures ---
+  {
+    id: "triangle_comp",
+    name: "Triangle Composition",
+    category: "Shapes & Structures",
+    nature: "Dynamic (View-Relative)",
+    description: "Groups three elements into an invisible triangle to establish visual stability.",
+    professionalTip: "Place the heaviest subject at the base, and let secondary points draw upward.",
+    defaultScore: 85,
+  },
+  {
+    id: "circular_comp",
+    name: "Circular / Oval Composition",
+    category: "Shapes & Structures",
+    nature: "Dynamic (View-Relative)",
+    description: "Organizes elements in a loop, keeping the viewer's eye cycling continuously within the frame.",
+    professionalTip: "Use rounded tunnels, mirrors, or arched gateways to encapsulate subject focus.",
+    defaultScore: 82,
+  },
+  {
+    id: "symmetry_reflections",
+    name: "Symmetry & Reflections",
+    category: "Shapes & Structures",
+    nature: "Dynamic (View-Relative)",
+    description: "Perfectly mirrored horizontal or vertical planes, common with glass facades or calm lakes.",
+    professionalTip: "Place the reflective boundary line exactly on the grid center and align vertical columns.",
+    defaultScore: 89,
+  },
+  {
+    id: "natural_framing",
+    name: "Natural Framing (Frame within a Frame)",
+    category: "Shapes & Structures",
+    nature: "Dynamic (View-Relative)",
+    description: "Encasing the target inside an archway, dark window frame, foliage, or tunnel opening.",
+    professionalTip: "Underexpose the framing elements slightly to make the illuminated center subject pop.",
+    defaultScore: 87,
+  },
+  {
+    id: "sandwich_comp",
+    name: "Sandwich Composition",
+    category: "Shapes & Structures",
+    nature: "Dynamic (View-Relative)",
+    description: "Trap the main subject tightly between two highly similar structural pillars or walls.",
+    professionalTip: "Forces focus onto the narrow center slot. Excellent for street scenes and portrait profiles.",
+    defaultScore: 79,
+  },
+
+  // --- Category: Depth & Scale ---
+  {
+    id: "layering",
+    name: "Layering (FG / MG / BG)",
+    category: "Depth & Scale",
+    nature: "Dynamic (View-Relative)",
+    description: "Placing objects deliberately in foreground, midground, and background to create 3D depth.",
+    professionalTip: "Utilize a shallow depth of field to gently blur the foreground leaves while the midground is sharp.",
+    defaultScore: 93,
+  },
+  {
+    id: "figure_to_ground",
+    name: "Figure-to-Ground Contrast",
+    category: "Depth & Scale",
+    nature: "Dynamic (View-Relative)",
+    description: "Ensures stark, unmistakable contrast between a dark subject silhouette and light background (or vice-versa).",
+    professionalTip: "Position your subject against empty sky or bright water to maximize edge clarity.",
+    defaultScore: 86,
+  },
+  {
+    id: "negative_space",
+    name: "Negative Space",
+    category: "Depth & Scale",
+    nature: "Dynamic (View-Relative)",
+    description: "Leaving massive portions of the frame empty, giving the focal subject immense breathing room.",
+    professionalTip: "Push the subject all the way to a corner, allowing the rest of the frame to be clean sky or wall.",
+    defaultScore: 88,
+  },
+  {
+    id: "fill_frame",
+    name: "Fill the Frame",
+    category: "Depth & Scale",
+    nature: "Dynamic (View-Relative)",
+    description: "Zooming in so tightly that the subject crowds out the entire space, eliminating distracting backgrounds.",
+    professionalTip: "Best for highly detailed texture studies, dynamic faces, and close-up macro details.",
+    defaultScore: 81,
+  },
+  {
+    id: "forced_perspective",
+    name: "Forced Perspective",
+    category: "Depth & Scale",
+    nature: "Dynamic (View-Relative)",
+    description: "Using distance gaps to make a tiny foreground object interact with a giant background object.",
+    professionalTip: "Align depth closely and use a very small aperture (like f/16) to keep both elements sharp.",
+    defaultScore: 76,
+  },
+
+  // --- Category: Framing Constraints & Angles ---
+  {
+    id: "birds_eye",
+    name: "Bird's Eye View (High Angle)",
+    category: "Framing Constraints & Angles",
+    nature: "Dynamic (View-Relative)",
+    description: "Shooting from directly above looking down, flattening 3D shapes into clean graphic patterns.",
+    professionalTip: "Great for food layouts, street crowds, or minimalist beach scenery from a high deck.",
+    defaultScore: 85,
+  },
+  {
+    id: "worms_eye",
+    name: "Worm's Eye View (Low Angle)",
+    category: "Framing Constraints & Angles",
+    nature: "Dynamic (View-Relative)",
+    description: "Shooting from the ground looking up to make ordinary subjects look towering and monumental.",
+    professionalTip: "Get your lens as close to the dirt or pavement as possible. Great for tall trees or architecture.",
+    defaultScore: 88,
+  },
+  {
+    id: "dutch_angle",
+    name: "Dutch Angle (Tilt)",
+    category: "Framing Constraints & Angles",
+    nature: "Dynamic (View-Relative)",
+    description: "Tilting the camera slightly off-axis to create a jarring feeling of unease, fast action, or speed.",
+    professionalTip: "Angle the main horizontal lines between 10 to 25 degrees. Do not overdo it unless stylistic.",
+    defaultScore: 77,
+  },
+  {
+    id: "center_eye",
+    name: "Center Dominant Eye",
+    category: "Framing Constraints & Angles",
+    nature: "Static (Frame-Relative)",
+    description: "In tight portraiture, place the subject's dominant eye precisely in the horizontal center of the frame.",
+    professionalTip: "Creates a highly intense, hypnotic gaze that follows the viewer across angles.",
+    defaultScore: 83,
+  },
+
+  // --- Category: Textures, Color & Concepts ---
+  {
+    id: "patterns_repetition",
+    name: "Patterns & Repetition",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Capturing rows of similar elements to establish visual rhythm, order, and graphic balance.",
+    professionalTip: "Use strong side-lighting to cast shadows that accentuate the repeating geometric ridges.",
+    defaultScore: 84,
+  },
+  {
+    id: "pattern_breaking",
+    name: "Pattern Breaking",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Finding a consistent pattern and focusing on the one singular element that disrupts it.",
+    professionalTip: "Make the breaking element rest on a Rule of Thirds intersection point for ultimate harmony.",
+    defaultScore: 86,
+  },
+  {
+    id: "juxtaposition",
+    name: "Juxtaposition",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Placing clashing, contrasting concepts next to each other to tell a striking or ironic visual story.",
+    professionalTip: "Contrast modern vs old, organic vs industrial, or complementary neon lights.",
+    defaultScore: 82,
+  },
+  {
+    id: "complementary_colors",
+    name: "Complementary Colors",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Pairing opposite colors on the color wheel (blue/orange, red/green) to create maximum visual pop.",
+    professionalTip: "Commonly used in cinema with warm skin tones contrasted by cool, teal-blue shadow backgrounds.",
+    defaultScore: 88,
+  },
+  {
+    id: "analogous_colors",
+    name: "Analogous Colors",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Using colors that sit adjacent to each other on the color wheel (greens/yellows) for calm harmony.",
+    professionalTip: "Perfect for misty forest scenes, peaceful autumn trails, or quiet oceans.",
+    defaultScore: 83,
+  },
+  {
+    id: "rule_of_odds",
+    name: "Rule of Odds",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Grouping subjects in odd numbers (3, 5, or 7) so the human eye has a clear, non-paired anchor.",
+    professionalTip: "Even numbers can feel static as the brain tries to pair them. Use 3 flowers or 3 people.",
+    defaultScore: 85,
+  },
+  {
+    id: "decisive_moment",
+    name: "The Decisive Moment",
+    category: "Textures, Color & Concepts",
+    nature: "Dynamic (View-Relative)",
+    description: "Capturing the exact fraction of a second where action, shape, and balance reach their peak harmony.",
+    professionalTip: "Switch to high-speed burst capture (60fps) and keep the shutter speed extremely fast.",
+    defaultScore: 89,
+  }
+];
